@@ -1,0 +1,300 @@
+/* --- CSS Reset (PENTING untuk konsistensi) --- */
+/* Sebuah reset dasar, Anda bisa menggunakan normalize.css atau reset.css yang lebih lengkap jika mau */
+*, *::before, *::after {
+    box-sizing: border-box; /* Pastikan padding dan border termasuk dalam lebar/tinggi elemen */
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif; /* Terapkan font global */
+    background-color: var(--dark-blue-bg); /* Pastikan background global diterapkan */
+    color: var(--user-text-general); /* Warna teks default */
+    line-height: 1.5; /* Line height default */
+    -webkit-font-smoothing: antialiased; /* Untuk rendering font yang lebih halus */
+    -moz-osx-font-smoothing: grayscale; /* Untuk rendering font yang lebih halus */
+}
+body {
+    display: flex; /* Memastikan body bisa menampung login-container dengan flex */
+    flex-direction: column;
+    min-height: 100vh;
+}
+p, h1, h2, h3, h4, h5, h6, ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ul, ol {
+    padding-left: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit; /* Pastikan elemen form mewarisi font */
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+/* Batas Reset */
+
+
+/* --- Variabel Warna (Pastikan ini ada di file CSS Anda) --- */
+:root {
+    --primary-pink: #B43C7A;
+    --light-pink: #E35E98;
+    --dark-blue-bg: #0D1235;
+    --dark-blue-accent: #163A5F;
+    --teal-accent: #41DCD6;
+    --dark-text: #323435;
+    --light-text: white;
+
+    --user-navbar-bg: rgba(13, 18, 53, 0.9);
+    --user-navbar-border: #2D3748;
+    --user-nav-link-default: #A0AEC0;
+    --user-text-general: #E2E8F0;
+
+    --footer-bg-new: #0b1a2b;
+    --footer-text-color-new: #d1d5db;
+    --footer-link-color-new: #d1d5db;
+    --footer-link-hover-color-new: #3f72af;
+    --footer-heading-color-new: #ffffff;
+    --footer-paragraph-color-new: #cbd5e1;
+    --footer-border-color-new: #3f72af;
+    --footer-copyright-color-new: #9ca3af;
+}
+
+/* --- Login Form Styles (Murni CSS, Bukan Tailwind Utilities) --- */
+
+/* Container luar untuk centering dan background */
+.login-container {
+    /* min-height: 100vh; -- Ini bisa ditangani oleh body sekarang */
+    flex-grow: 1; /* Agar mengambil ruang vertikal yang tersisa */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem; /* Padding responsif: 3rem atas/bawah, 1.5rem kiri/kanan */
+    background-color: var(--dark-blue-bg); /* Menggunakan variabel warna dari :root */
+    color: var(--user-text-general);
+}
+
+/* Card form background dan styling */
+.login-card {
+    width: 100%;
+    max-width: 28rem;
+    margin-top: 1.5rem; /* Mungkin tidak perlu jika login-container sudah center */
+    padding: 1.5rem;
+    background-color: var(--dark-blue-accent); /* Menggunakan variabel warna */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.15); /* Shadow lebih gelap */
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Session Status */
+.session-status {
+    margin-bottom: 1.5rem; /* Sedikit lebih banyak spasi */
+    color: var(--user-text-general);
+    text-align: center;
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Background samar */
+    border-radius: 0.25rem;
+}
+
+/* Group Form (untuk email, password) */
+.form-group {
+    margin-bottom: 1.25rem; /* Menyesuaikan spasi antar group */
+}
+
+/* Label Form */
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--user-text-general);
+    margin-bottom: 0.5rem;
+}
+
+/* Input Form (text, email, password) */
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem; /* Padding sedikit lebih besar */
+    border: 1px solid var(--user-navbar-border);
+    border-radius: 0.375rem;
+    background-color: var(--dark-blue-bg);
+    color: var(--user-text-general);
+    font-size: 1rem; /* Ukuran font standar */
+    line-height: 1.5;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.form-input::placeholder {
+    color: var(--user-nav-link-default);
+    opacity: 0.7; /* Sedikit lebih samar */
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(180, 60, 122, 0.3); /* Ring lebih transparan */
+    background-color: rgba(13, 18, 53, 0.8); /* Sedikit efek latar belakang saat fokus */
+}
+
+/* Pesan Error Input */
+.error-message {
+    font-size: 0.8125rem; /* Sedikit lebih kecil */
+    color: #ef4444;
+    margin-top: 0.25rem; /* Spasi lebih dekat ke input */
+}
+
+/* Group Checkbox (Remember Me) */
+.form-checkbox-group {
+    margin-top: 1.5rem; /* Lebih banyak spasi */
+    margin-bottom: 1.5rem; /* Jaga konsistensi spasi */
+}
+
+.form-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    color: var(--user-text-general);
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+/* Kustomisasi Checkbox yang lebih rapi */
+.form-checkbox {
+    /* Sembunyikan checkbox asli */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--user-navbar-border);
+    border-radius: 0.25rem;
+    background-color: var(--dark-blue-bg);
+    cursor: pointer;
+    margin-right: 0.5rem;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0; /* Pastikan tidak mengecil */
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Style untuk centang saat checked */
+.form-checkbox:checked {
+    background-color: var(--primary-pink);
+    border-color: var(--primary-pink);
+}
+
+/* Membuat tanda centang */
+.form-checkbox:checked::after {
+    content: '';
+    display: block;
+    width: 0.3rem; /* Lebar centang */
+    height: 0.6rem; /* Tinggi centang */
+    border: solid white; /* Warna centang */
+    border-width: 0 2px 2px 0; /* Tebal border centang */
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%) rotate(45deg); /* Penyesuaian posisi */
+}
+
+.form-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(180, 60, 122, 0.4), 0 0 0 2px var(--dark-blue-accent); /* Fokus ring dengan offset */
+}
+
+
+/* Aksi Form (Link Lupa Password dan Tombol) */
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 2rem; /* Lebih banyak spasi di atas group aksi */
+    gap: 1rem; /* Tambahkan gap antar elemen jika perlu */
+}
+
+/* Link Lupa Password */
+.form-link {
+    font-size: 0.875rem;
+    color: var(--user-nav-link-default);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+    padding: 0.25rem 0.5rem; /* Sedikit padding agar fokus ring terlihat */
+    border-radius: 0.25rem;
+}
+
+.form-link:hover {
+    color: var(--primary-pink);
+}
+
+.form-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-pink), 0 0 0 4px rgba(180, 60, 122, 0.2);
+}
+
+/* Tombol Login */
+.form-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Untuk teks di tengah */
+    padding: 0.75rem 1.5rem; /* Padding lebih besar */
+    margin-left: 1rem; /* Spasi dari link lupa password */
+    background-color: var(--primary-pink);
+    color: var(--light-text);
+    border: none; /* Tidak perlu border karena background warna */
+    border-radius: 0.375rem;
+    font-size: 1rem; /* Ukuran font standar */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    min-width: 8rem; /* Ukuran minimum agar konsisten */
+}
+
+.form-button:hover {
+    background-color: var(--light-pink);
+    box-shadow: 0 4px 10px rgba(180, 60, 122, 0.4); /* Efek shadow saat hover */
+}
+
+.form-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(180, 60, 122, 0.5), 0 0 0 2px var(--dark-blue-accent);
+    background-color: var(--light-pink);
+}
+
+.form-button:active {
+    background-color: var(--primary-pink);
+    box-shadow: none; /* Hilangkan shadow saat aktif */
+}
+
+/* --- Responsive Adjustments (Tambahkan jika diperlukan, ini contoh) --- */
+@media (max-width: 640px) { /* Untuk layar sangat kecil */
+    .login-container {
+        padding: 1.5rem; /* Kurangi padding di layar kecil */
+    }
+    .login-card {
+        padding: 1rem; /* Kurangi padding card di layar kecil */
+    }
+    .form-actions {
+        flex-direction: column; /* Link dan tombol jadi vertikal */
+        align-items: stretch; /* Meregangkan elemen */
+        gap: 0.75rem;
+    }
+    .form-button {
+        margin-left: 0; /* Hapus margin kiri di tombol */
+        width: 100%; /* Tombol memenuhi lebar penuh */
+    }
+}

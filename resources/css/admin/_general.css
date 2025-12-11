@@ -1,0 +1,157 @@
+/* resources/css/admin/_general.css */
+
+/* === Gaya Dasar Halaman Admin === */
+.admin-page-content .min-h-screen.bg-gray-100 { /* Target spesifik ke div Breeze jika masih dipakai */
+    background-color: #1A202C !important; /* Latar utama gelap (dark navy) */
+    color: #E2E8F0; /* Teks terang default */
+}
+.admin-page-content header.bg-white.shadow { /* Target header dari layout Breeze */
+    background-color: #2D3748 !important; /* Latar header sedikit lebih terang dari BG utama */
+    border-bottom: 1px solid #4A5568; /* Border header */
+}
+.admin-header-title {
+    color: #E2E8F0; /* Teks header terang */
+    font-weight: 600;
+    font-size: 1.25rem; /* text-xl */
+}
+
+/* === Layout Kartu Konten === */
+.admin-card-padding { /* Pengganti p-6 jika digunakan */
+    padding: 1.5rem;
+}
+.admin-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* Agar elemen bisa turun jika layar sempit */
+    gap: 1rem; /* Spasi antar elemen jika wrap */
+}
+
+/* === Elemen Teks Umum === */
+.admin-welcome-message {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 500; /* medium */
+    color: #CBD5E0; /* Teks terang */
+    margin-bottom: 1rem; /* mb-4 */
+}
+.admin-section-title {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* semibold */
+    color: #CBD5E0; /* Teks terang */
+    margin-bottom: 0.75rem; /* mb-3 */
+}
+.admin-text-secondary {
+    color: #718096; /* Warna teks abu-abu */
+}
+
+/* === Form Input Umum === */
+.admin-label {
+    display: block;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #A0AEC0; /* text-gray-300 versi terang */
+    margin-bottom: 0.25rem;
+}
+.admin-input,
+.admin-textarea,
+.admin-select { /* Class umum untuk input, textarea, select */
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    border-radius: 0.375rem; /* rounded-md */
+    border: 1px solid #4A5568; /* border-gray-600 versi gelap */
+    background-color: #2D3748; /* bg-gray-700 versi gelap */
+    color: #E2E8F0; /* text-gray-100 */
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); /* shadow-sm */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.admin-input:focus,
+.admin-textarea:focus,
+.admin-select:focus {
+    outline: none;
+    border-color: #63B3ED; /* Warna fokus, misal biru muda */
+    box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.3); /* Ring fokus */
+}
+.admin-textarea {
+    min-height: 80px; /* Sesuaikan tinggi textarea */
+}
+.admin-input-file {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid #4A5568;
+    border-radius: 0.375rem;
+    background-color: #2D3748;
+    color: #A0AEC0;
+}
+.admin-input-file::file-selector-button { /* Styling tombol "Choose File" */
+    margin-right: 0.75rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    background-color: #4A5568;
+    color: #E2E8F0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.admin-input-file::file-selector-button:hover {
+    background-color: #718096;
+}
+.admin-error-message {
+    color: #F56565; /* Merah untuk error */
+    font-size: 0.75rem; /* text-xs */
+    margin-top: 0.25rem; /* mt-1 */
+}
+.admin-link-secondary { /* Untuk link seperti "Batal" */
+    font-size: 0.875rem;
+    color: #A0AEC0;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+.admin-link-secondary:hover {
+    color: #CBD5E0;
+}
+
+/* === Layout Umum Lainnya === */
+.admin-quick-links { /* Kontainer untuk tombol akses cepat */
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+.admin-divider {
+    border-top: 1px solid #4A5568; /* Warna garis pemisah */
+    margin-top: 1.5rem; /* my-6 */
+    margin-bottom: 1.5rem; /* my-6 */
+}
+.admin-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem 1.5rem; /* gap-y-4 gap-x-6 */
+}
+@media (min-width: 768px) { /* md breakpoint */
+    .admin-detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+.admin-detail-label {
+    display: block;
+    font-weight: 600;
+    color: #A0AEC0;
+    margin-bottom: 0.25rem;
+}
+.admin-detail-value {
+    display: block;
+    color: #CBD5E0;
+    word-break: break-word;
+}
+.admin-detail-value.font-semibold {
+    font-weight: 600;
+}
+.admin-detail-value.text-lg {
+    font-size: 1.125rem;
+}

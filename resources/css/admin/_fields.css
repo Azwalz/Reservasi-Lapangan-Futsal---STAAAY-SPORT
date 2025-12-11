@@ -1,0 +1,10 @@
+/* resources/css/admin/_fields.css */
+
+/* Gaya Khusus untuk Halaman Lapangan */
+.admin-table-image { /* Untuk gambar di tabel Lapangan */
+    height: 4rem; /* Contoh: h-16 */
+    width: 6rem;  /* Contoh: w-24 */
+    object-fit: cover;
+    border-radius: 0.25rem; /* Contoh: rounded */
+    background-color: #4A5568; /* Latar jika gambar transparan atau gagal load */
+}

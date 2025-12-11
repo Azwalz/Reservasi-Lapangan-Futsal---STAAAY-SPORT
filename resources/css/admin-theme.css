@@ -1,0 +1,13 @@
+
+    /* Impor gaya umum dan komponen */
+    @import url('admin/_general.css');
+    @import url('admin/_components.css');
+    @import url('admin/_navigation.css');
+
+    /* Impor gaya spesifik per modul/kategori */
+    @import url('admin/_users.css');
+    @import url('admin/_fields.css');
+    @import url('admin/_reservations.css');
+
+    /* Anda bisa menambahkan gaya override atau gaya kecil lainnya di sini jika perlu */
+    

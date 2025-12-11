@@ -1,0 +1,93 @@
+/* resources/css/admin/_general.css atau _navigation.css */
+
+/* === Navigasi Utama Admin === */
+.admin-main-nav {
+    background-color: #2D3748; /* Warna latar navigasi, sedikit beda dari header halaman */
+    padding: 0.75rem 1.5rem; /* Sesuaikan padding atas/bawah dan kiri/kanan */
+    border-bottom: 1px solid #4A5568; /* Border bawah navigasi */
+    color: #E2E8F0; /* Warna teks default untuk navigasi */
+}
+
+.admin-main-nav ul.admin-nav-list,
+.admin-main-nav ul.admin-nav-list-guest {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem; /* Spasi antar item navigasi (Tailwind space-x-6) */
+}
+
+.admin-main-nav .nav-item {
+    /* Tidak perlu style khusus di sini jika hanya pembungkus li */
+}
+
+.admin-main-nav .nav-link {
+    color: #CBD5E0; /* Warna link navigasi */
+    text-decoration: none;
+    font-weight: 500; /* medium */
+    transition: color 0.2s ease-in-out;
+}
+
+.admin-main-nav .nav-link:hover,
+.admin-main-nav .nav-link.active { /* Anda bisa menambahkan class 'active' dengan JavaScript atau helper Laravel */
+    color: #FFFFFF; /* Warna link saat hover atau aktif */
+    /* text-decoration: underline; */ /* Opsional */
+}
+
+/* Untuk item logout agar bisa ke kanan */
+.admin-main-nav .logout-item {
+    margin-left: auto; /* Mendorong item ini ke paling kanan */
+}
+
+/* Styling untuk link di dalam form logout agar terlihat seperti nav-link lain */
+.admin-main-nav .logout-item form {
+    display: inline; /* Agar form tidak mengambil baris baru */
+}
+.admin-main-nav .logout-item .nav-link {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    /* Warisi warna dan font dari .nav-link umum */
+}
+
+/* Untuk navigasi tamu (Login/Register) */
+.admin-main-nav ul.admin-nav-list-guest {
+    /* Bisa jadi sama dengan admin-nav-list atau sedikit berbeda jika perlu */
+    /* Contoh: justify-content: flex-end; jika ingin link login/register di kanan */
+}
+
+/* Jika Anda menggunakan class Tailwind di dalam navigasi,
+   Anda mungkin perlu menghapusnya agar gaya dari CSS ini yang berlaku,
+   atau buat selector CSS ini lebih spesifik. */
+
+/* Contoh untuk header halaman yang mungkin ada di layout Breeze/Jetstream */
+.admin-page-header {
+    background-color: #2D3748; /* Sama dengan navigasi atau sedikit beda */
+    /* box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06); */ /* Jika ingin shadow */
+    /* border-bottom: 1px solid #4A5568; */ /* Jika navigasi tidak punya border bawah */
+}
+
+.admin-header-container { /* Pengganti max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 */
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.5rem; /* py-6 */
+    padding-bottom: 1.5rem; /* py-6 */
+    padding-left: 1rem;  /* px-4 */
+    padding-right: 1rem; /* px-4 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .admin-header-container {
+        padding-left: 1.5rem; /* sm:px-6 */
+        padding-right: 1.5rem; /* sm:px-6 */
+    }
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+    .admin-header-container {
+        padding-left: 2rem; /* lg:px-8 */
+        padding-right: 2rem; /* lg:px-8 */
+    }
+}

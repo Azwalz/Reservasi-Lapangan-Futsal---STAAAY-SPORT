@@ -1,0 +1,508 @@
+/* ==========================================================================
+   STAAAYS SPORT - Main Stylesheet
+   --------------------------------------------------------------------------
+   This file contains global styles, variables, and specific section styling
+   for the STAAAYS SPORT landing page and related user interfaces.
+   ========================================================================== */
+
+/* --- Global Styles & Variables --- */
+:root {
+    /* Colors (Diselaraskan dengan tema utama & footer baru) */
+    --primary-pink: #B43C7A;
+    --light-pink: #E35E98;
+    --dark-blue-bg: #0D1235;
+    --dark-blue-accent: #163A5F;
+    --teal-accent: #41DCD6;
+    --dark-text: #323435;
+    --light-text: white;
+
+    /* User Navbar specific colors */
+    --user-navbar-bg: rgba(13, 18, 53, 0.9);
+    --user-navbar-border: #2D3748;
+    --user-nav-link-default: #A0AEC0;
+    --user-text-general: #E2E8F0; /* Digunakan untuk teks umum di konten */
+
+    /* Footer specific colors */
+    --footer-bg-new: #0b1a2b;
+    --footer-text-color-new: #d1d5db;
+    --footer-link-color-new: #d1d5db;
+    --footer-link-hover-color-new: #3f72af;
+    --footer-heading-color-new: #ffffff;
+    --footer-paragraph-color-new: #cbd5e1;
+    --footer-border-color-new: #3f72af;
+    --footer-copyright-color-new: #9ca3af;
+
+    /* Spacing & Borders */
+    --section-padding-y: 150px;
+    --border-thickness: 4px; /* For headers */
+    --line-height-small: 0.1em;
+}
+
+/* --- Global HTML & Body Styles --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark-blue-bg); /* Ensure background is consistent */
+    color: var(--user-text-general); /* Menggunakan warna teks umum yang baru */
+}
+
+/* Custom Font (if used) */
+.nico {
+    font-family: 'Nico Moji', cursive;
+}
+
+/* --- Parent Wrapper --- */
+.parent-wrapper {
+    /* No active styles here, if body already handles background. */
+}
+
+/* --- Utility Classes --- */
+.tc-1 {
+    color: var(--primary-pink);
+}
+
+.tc-2 {
+    color: var(--light-text);
+}
+
+.bg-f {
+    background-color: var(--dark-blue-accent);
+}
+
+/* --- Welcome Screen --- */
+.welcome-screen {
+    z-index: 2000;
+    background-color: var(--dark-blue-bg);
+}
+
+.welcome-dia-3 {
+    left: 0;
+    bottom: 20%;
+}
+
+.welcome-dia-4 {
+    right: 0;
+    bottom: 0;
+}
+
+.welcome-dia-5 {
+    right: 0;
+    top: 0;
+}
+
+.welcome-content {
+    z-index: 2002;
+    top: 25%;
+}
+
+.welcome-text-divider {
+    max-width: 500px;
+}
+
+/* --- Buttons --- */
+.btn-int {
+    border-radius: 60px;
+    color: var(--light-text);
+    background-color: var(--primary-pink);
+    border: none; /* Ditambahkan dari style baru */
+    font-weight: 600; /* Ditambahkan dari style baru */
+    transition: background-color 0.3s ease;
+}
+
+.btn-int:hover {
+    color: var(--light-text); /* Pastikan teks tetap terang saat hover */
+    background-color: var(--dark-blue-accent);
+}
+
+/* --- Section Anchors (for fixed headers) --- */
+#tujuan:before,
+#galeri:before,
+#kontak:before {
+    height: 70px;
+    content: "";
+    display: block;
+}
+
+/* --- Navigation Bar (Public/Old Nav) --- */
+#navbar {
+    background: var(--dark-blue-bg);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#navbar.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link {
+    color: var(--light-text); /* Default color for all nav links */
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+    color: var(--primary-pink); /* Mengubah warna teks menjadi pink */
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary-pink); /* Mengubah warna underline menjadi pink */
+}
+
+/* --- Navigasi Pengguna (user-navbar) --- */
+.user-navbar {
+    background-color: var(--user-navbar-bg);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--user-navbar-border);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+}
+
+.user-navbar .navbar-brand {
+    color: var(--light-text);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.user-navbar .navbar-nav {
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.user-navbar .nav-link {
+    color: var(--user-nav-link-default);
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+}
+
+.user-navbar .nav-link:hover {
+    color: var(--primary-pink);
+}
+
+.user-navbar .nav-link.active {
+    color: var(--primary-pink);
+    border-bottom-color: var(--primary-pink);
+    font-weight: bold;
+}
+
+.user-navbar .logout-button {
+    background: none;
+    border: none;
+    color: var(--user-nav-link-default);
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.user-navbar .logout-button:hover {
+    color: var(--primary-pink);
+}
+
+.user-navbar .logout-form {
+    margin-bottom: 0;
+}
+
+
+/* --- Headers (th-1, th-2) --- */
+.th-1 {
+    width: 100%;
+    border-bottom: var(--border-thickness) solid var(--light-text);
+    line-height: var(--line-height-small);
+    margin: 10px 0 20px;
+    font-weight: 700;
+    color: var(--light-text);
+}
+
+.th-1 span {
+    background: var(--dark-blue-bg);
+    padding: 0 30px;
+}
+
+.th-2 {
+    width: 100%;
+    border-bottom: var(--border-thickness) solid var(--dark-blue-accent);
+    line-height: var(--line-height-small);
+    margin: 10px 0 20px;
+}
+
+.th-2 span {
+    background: var(--dark-blue-bg);
+    padding: 0 30px;
+}
+
+
+/* --- Floating Animations --- */
+@keyframes float {
+    0% { transform: translatey(0px); }
+    50% { transform: translatey(-20px); }
+    100% { transform: translatey(0px); }
+}
+
+.floating {
+    animation: float 10s ease-in-out infinite;
+}
+
+.floating-1 {
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-2 {
+    animation: float 8s ease-in-out infinite;
+}
+
+.floating-3 {
+    animation: float 7s ease-in-out infinite;
+}
+
+
+/* --- Header Section Specific --- */
+#header .header-text-img {
+    max-width: 500px;
+    height: 400px;
+}
+
+#header .header-description {
+    color: var(--light-text);
+}
+
+#header .header-bg-img {
+    width: 550px;
+    height: auto;
+}
+
+
+/* --- Tujuan Section Specific --- */
+.mg-1 {
+    margin: var(--section-padding-y) 0;
+}
+
+.tujuan-img-2 {
+    z-index: -1;
+}
+
+
+/* --- Galeri Section Specific --- */
+#svg-parent {
+    position: relative;
+    height: 462px;
+}
+
+.svg-container {
+    left: 0;
+    right: 0;
+}
+
+.svg-layer-1 {
+    z-index: -1;
+    top: 0;
+}
+
+.svg-layer-2 {
+    z-index: -2;
+    top: 0;
+}
+
+svg .gl-1 {
+    stroke: var(--dark-blue-accent);
+    stroke-dashoffset: 1899.382568359375px;
+    stroke-dasharray: 1899.382568359375px;
+    transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+}
+
+svg .gl-2 {
+    stroke: var(--teal-accent);
+    stroke-dashoffset: 1899.382568359375px;
+    stroke-dasharray: 1899.382568359375px;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+}
+
+svg.active .gl-1,
+svg.active .gl-2 {
+    stroke-dashoffset: 0;
+}
+
+/* --- Main Content Padding --- */
+main {
+    padding-top: 80px; /* Offset for fixed navbar */
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+
+/* ========================
+   Footer Modern & Responsif
+   ======================== */
+.footer-wrapper {
+    background-color: var(--dark-blue-accent);
+    color: var(--footer-text-color-new);
+    padding: 2.5rem 1.5rem;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: auto;
+}
+
+.footer-wrapper a {
+    color: var(--footer-link-color-new);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-wrapper a:hover {
+    color: var(--footer-link-hover-color-new);
+}
+
+.footer-inner {
+    max-width: 1140px;
+    margin: auto;
+}
+
+/* Grid Footer for desktop */
+.footer-inner .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Footer columns */
+.footer-inner > .row > div {
+    flex: 1 1 280px;
+}
+
+/* Column titles */
+.footer-wrapper h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--footer-heading-color-new);
+}
+
+/* Paragraphs & lists */
+.footer-wrapper p,
+.footer-wrapper ul {
+    margin: 0 0 1rem 0;
+    color: var(--footer-paragraph-color-new);
+    font-size: 0.9rem;
+}
+
+.footer-wrapper ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-wrapper ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Newsletter form */
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--footer-text-color-new);
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: var(--footer-copyright-color-new);
+}
+
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--footer-link-hover-color-new);
+}
+
+.newsletter-form button {
+    padding: 0.5rem 1rem;
+    background-color: var(--dark-blue-bg);
+    color: white;
+    border: none;
+    border-radius: 60px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--footer-border-color-new);
+}
+
+/* Social Media Icons */
+.footer-wrapper .social-icons {
+    margin: 2rem 0 1.5rem 0;
+    text-align: center;
+}
+
+.footer-wrapper .social-icons a {
+    color: var(--footer-link-color-new);
+    margin: 0 0.75rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-wrapper .social-icons a:hover {
+    color: var(--dark-blue-bg);
+}
+
+/* Separator line */
+.footer-wrapper hr {
+    border-top: 1px solid var(--dark-blue-bg);
+    margin: 1rem 0;
+    opacity: 100%;
+}
+
+/* Copyright text */
+.footer-wrapper .copyright-text {
+    font-size: 0.8rem;
+    color: var(--footer-copyright-color-new);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* --- Responsive Adjustments for Footer --- */
+@media (max-width: 768px) { /* Untuk ukuran mobile dan tablet */
+    .footer-inner .row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .footer-wrapper .social-icons {
+        margin: 1.5rem 0;
+    }
+}
+
+/* --- Global Responsive Adjustments --- */
+@media only screen and (min-width: 992px) {
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        --bs-gutter-x: 10rem;
+    }
+}

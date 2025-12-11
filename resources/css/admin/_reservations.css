@@ -1,0 +1,58 @@
+/* resources/css/admin/_reservations.css */
+
+/* Gaya Khusus untuk Halaman Reservasi */
+
+/* Badge untuk Status Reservasi */
+.status-badge.status-pending {
+    background-color: #FEFCBF; /* Kuning */
+    color: #B7791F;
+}
+.status-badge.status-confirmed,
+.status-badge.status-paid { /* Bisa digabung jika warnanya sama */
+    background-color: #C6F6D5; /* Hijau */
+    color: #2F855A;
+}
+.status-badge.status-cancelled {
+    background-color: #FED7D7; /* Merah */
+    color: #C53030;
+}
+.status-badge.status-completed { /* Jika ada status completed */
+    background-color: #EBF4FF; /* Biru muda */
+    color: #4299E1;
+}
+.status-badge.status-unknown {
+    background-color: #E2E8F0; /* Abu-abu */
+    color: #4A5568;
+}
+
+/* Layout untuk tombol aksi di tabel reservasi */
+.admin-table-actions form.admin-action-form {
+    margin-bottom: 0.25rem;
+    display: block;
+}
+@media (min-width: 768px) {
+    .admin-table-actions form.admin-action-form {
+        display: inline-block;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+    }
+    .admin-table-actions form.admin-action-form:last-child {
+        margin-right: 0;
+    }
+}
+
+/* Layout untuk tombol ubah status di halaman detail reservasi */
+.admin-content-card .flex.flex-wrap.gap-2 .admin-action-button { /* Ini adalah selector yang cukup spesifik dari Tailwind, mungkin bisa diganti class custom */
+    margin-bottom: 0.5rem; /* Beri spasi bawah jika tombol wrap */
+}
+/* Jika Anda membuat class custom untuk kontainer tombol tersebut, misalnya: */
+/*
+.admin-status-actions-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; // Tailwind gap-2
+}
+.admin-status-actions-container .admin-action-button {
+    margin-bottom: 0.5rem;
+}
+*/

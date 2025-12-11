@@ -1,0 +1,13 @@
+/* resources/css/admin/_users.css */
+
+/* Gaya Khusus untuk Halaman Pengguna */
+
+/* Badge untuk Peran (Role) Pengguna */
+.status-badge.status-admin {
+    background-color: #63B3ED; /* Biru muda */
+    color: #1A365D; /* Biru tua */
+}
+.status-badge.status-user {
+    background-color: #A0AEC0; /* Abu-abu */
+    color: #1A202C; /* Hitam keabuan */
+}

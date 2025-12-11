@@ -1,0 +1,315 @@
+/* --- Root Variables (Diselaraskan dengan tema utama & footer baru) --- */
+:root {
+    --primary-pink: #B43C7A;
+    --light-pink: #E35E98;
+    --dark-blue-bg: #0D1235;
+    --dark-blue-accent: #163A5F;
+    --teal-accent: #41DCD6;
+    --dark-text: #323435;
+    --light-text: white;
+
+    --user-navbar-bg: rgba(13, 18, 53, 0.9);
+    --user-navbar-border: #2D3748;
+    --user-nav-link-default: #A0AEC0;
+    --user-text-general: #E2E8F0;
+
+    --footer-bg-new: #0b1a2b;
+    --footer-text-color-new: #d1d5db;
+    --footer-link-color-new: #d1d5db;
+    --footer-link-hover-color-new: #3f72af;
+    --footer-heading-color-new: #ffffff;
+    --footer-paragraph-color-new: #cbd5e1;
+    --footer-border-color-new: #3f72af;
+    --footer-copyright-color-new: #9ca3af;
+
+    --border-thickness: 4px;
+    --line-height-small: 0.1em;
+}
+
+/* --- Global HTML & Body Styles --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark-blue-bg);
+    color: var(--user-text-general);
+}
+
+/* --- Parent Wrapper --- */
+.parent-wrapper {
+    /* No active styles here, if body already handles background. */
+}
+
+/* --- Navigasi Pengguna (user-navbar) --- */
+.user-navbar {
+    background-color: var(--user-navbar-bg);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--user-navbar-border);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+}
+
+.user-navbar .navbar-brand {
+    color: var(--light-text);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.user-navbar .navbar-nav {
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.user-navbar .nav-link {
+    color: var(--user-nav-link-default);
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+}
+
+.user-navbar .nav-link:hover {
+    color: var(--primary-pink);
+}
+
+.user-navbar .nav-link.active {
+    color: var(--primary-pink);
+    border-bottom-color: var(--primary-pink);
+    font-weight: bold;
+}
+
+.user-navbar .logout-button {
+    background: none;
+    border: none;
+    color: var(--user-nav-link-default);
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.user-navbar .logout-button:hover {
+    color: var(--primary-pink);
+}
+
+.user-navbar .logout-form {
+    margin-bottom: 0;
+}
+
+/* --- Tombol Interaktif (btn-int) --- */
+.btn-int {
+    color: var(--light-text);
+    background-color: var(--primary-pink);
+    border: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-int:hover {
+    background-color: var(--light-pink);
+    color: var(--light-text);
+}
+
+/* --- Header Umum (th-1) --- */
+.th-1 {
+    width: 100%;
+    border-bottom: var(--border-thickness) solid var(--light-text);
+    line-height: var(--line-height-small);
+    margin: 10px 0 20px;
+    font-weight: 700;
+    color: var(--light-text);
+}
+.th-1 span {
+    background: var(--dark-blue-bg);
+    padding:0 30px;
+}
+
+/* --- Warna Teks Kustom (tc-1) --- */
+.tc-1 {
+    color: var(--primary-pink);
+}
+
+/* --- Main Content Padding --- */
+main {
+    padding-top: 80px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media only screen and (min-width: 992px) {
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        --bs-gutter-x: 10rem;
+    }
+}
+
+/* ========================
+   Footer Modern & Responsif
+   ======================== */
+.footer-wrapper {
+    background-color: var(--dark-blue-accent);
+    color: var(--footer-text-color-new);
+    padding: 2.5rem 1.5rem;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: auto;
+}
+
+.footer-wrapper a {
+    color: var(--footer-link-color-new);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-wrapper a:hover {
+    color: var(--footer-link-hover-color-new);
+}
+
+.footer-inner {
+    max-width: 1140px;
+    margin: auto;
+}
+
+/* Grid Footer for desktop */
+.footer-inner .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Footer columns */
+.footer-inner > .row > div {
+    flex: 1 1 280px;
+}
+
+/* Column titles */
+.footer-wrapper h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--footer-heading-color-new);
+}
+
+/* Paragraphs & lists */
+.footer-wrapper p,
+.footer-wrapper ul {
+    margin: 0 0 1rem 0;
+    color: var(--footer-paragraph-color-new);
+    font-size: 0.9rem;
+}
+
+.footer-wrapper ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-wrapper ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Newsletter form */
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--footer-text-color-new);
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: var(--footer-copyright-color-new);
+}
+
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--footer-link-hover-color-new);
+}
+
+.newsletter-form button {
+    padding: 0.5rem 1rem;
+    background-color: var(--footer-link-hover-color-new);
+    color: white;
+    border: none;
+    border-radius: 60px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--primary-pink);
+}
+
+/* Social Media Icons */
+.footer-wrapper .social-icons {
+    margin: 2rem 0 1.5rem 0;
+    text-align: center;
+}
+
+.footer-wrapper .social-icons a {
+    color: var(--footer-link-color-new);
+    margin: 0 0.75rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-wrapper .social-icons a:hover {
+    color: var(--footer-bg-new);
+}
+
+/* Separator line */
+.footer-wrapper hr {
+    border-top: 1px solid var(--dark-blue-bg);
+    margin: 1rem 0;
+    opacity: 100%;
+}
+
+/* Copyright text */
+.footer-wrapper .copyright-text {
+    font-size: 0.8rem;
+    color: var(--footer-copyright-color-new);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .footer-inner .row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .footer-wrapper .social-icons {
+        margin: 1.5rem 0;
+    }
+}

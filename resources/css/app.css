@@ -1,0 +1,7 @@
+@import 'admin/_navigation.css'; /* Tambahkan baris ini */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
